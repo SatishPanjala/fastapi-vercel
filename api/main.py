@@ -3,6 +3,10 @@ from fastapi.responses import JSONResponse
 
 app = FastAPI(title="FastAPI on Vercel - All Methods Example")
 
+@app.get("/")
+def get_user():
+    return JSONResponse({"message": "This is sample elysium fastapi"})
+
 @app.get("/user")
 def get_user():
     return JSONResponse({"message": "User Returned"})
