@@ -10,7 +10,7 @@ load_dotenv()
 # Read env variables
 SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_SERVICE_ROLE_KEY = os.getenv("SUPABASE_SERVICE_ROLE_KEY")
-ALLOWED_ORIGINS = os.getenv("ALLOWED_ORIGINS", "*")  # allow set e.g. https://your-frontend-url
+ALLOWED_ORIGINS = ALLOWED_ORIGINS=https://fastapi-next-supabase.vercel.app
 
 if not SUPABASE_URL or not SUPABASE_SERVICE_ROLE_KEY:
     raise RuntimeError("SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY must be set as environment variables")
