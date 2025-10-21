@@ -12,11 +12,9 @@ SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_SERVICE_ROLE_KEY = os.getenv("SUPABASE_SERVICE_ROLE_KEY")
 ALLOWED_ORIGINS = ALLOWED_ORIGINS=https://fastapi-next-supabase.vercel.app
 
-if not SUPABASE_URL or not SUPABASE_SERVICE_ROLE_KEY:
-    raise RuntimeError("SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY must be set as environment variables")
-
-# create supabase admin client (server only)
-supabase: Client = create_client(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY)
+@app.get("/user")
+def get_user():
+    return JSONResponse({"message": "User Returned"})
 
 app = FastAPI(title="FastAPI + Supabase Admin Example")
 
